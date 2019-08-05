@@ -1,0 +1,124 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+}
+    
+%heading {
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading1 {
+    @extend %heading;
+    font-size: 4.5rem;
+    color: $color-grey-light-1;
+    line-height: 1;
+}
+
+
+.btn {
+    background-color: $color-primary;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+}
+
+
+.container {
+    display: grid;
+    grid-template-rows: 80vh ;
+    grid-template-columns:  [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+}
+.header {
+    background-color: $color-grey-dark-1;
+    grid-column: full-start / col-end 6;
+    // background-image: linear-gradient(rgba(black, .93), rgba(black, .93)), url(../img/hero.jpeg);
+    // background-size: cover;
+    // background-position: center;
+    padding: 8rem;
+    padding-top: 4rem;
+
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-row-gap: 1.5rem;
+    justify-content: center;
+
+    // @media only screen and (max-width: $bp-medium) {
+    //     grid-column: 1 / -1;
+    // }
+
+    // @media only screen and (max-width: $bp-small) {
+    //     padding: 5rem;
+    // }
+
+    &__logo {
+        height: 3rem;
+        justify-self: center;
+    }
+
+    &__btn {
+        align-self: start;
+        justify-self: start;
+    }
+
+    &__seentext {
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        grid-column-gap: 1.5rem;
+        align-items: center;
+
+        font-size: 1.6rem;
+        color: $color-grey-light-2;
+
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: $color-grey-light-2;
+        }
+    }
+
+    &__seenlogo {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 3rem;
+        justify-items: center;
+        align-items: center;
+
+        img {
+            max-height: 2.5rem;
+            max-width: 100%;
+            filter: brightness(70%);
+        }
+    }
+}

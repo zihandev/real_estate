@@ -1,0 +1,107 @@
+.single-room {
+    padding: 5rem 0 0 0;
+  }
+
+  .singleroomimages {
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 50px;
+  }
+
+  .singleroomimages img {
+    margin-top : 3rem;
+    width: 100%;
+   
+    display: block;
+  }
+
+  .singleroominfo {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20rem;
+    margin: 2rem auto;
+  }
+
+
+  .desc{
+    margin: 1rem 0;
+    font-size: 1.4rem;
+   
+  }
+
+  .desc> * {
+      margin-bottom: 1.5rem;
+  }
+
+  .info > * {
+    margin-bottom: 2rem;
+  }
+
+.info {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+.desc h3 {
+    color :  #8B4513	;
+    font-size: 3rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.desc p {
+  line-height: 1.5;
+}
+.info h3,
+.info h6 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.info h3 {
+    color :  #8B4513	;
+}
+
+.info h6 {
+  font-weight: 300;
+}
+
+.btnprimary {
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: var(--mainSpacing);
+    color: var(--mainBlack);
+    background: var(--primaryColor);
+    padding: 0.4rem 0.9rem;
+    border: 3px solid var(--primaryColor);
+    transition: var(--mainTransition);
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .btnprimary:hover {
+    background: transparent;
+    color: var(--primaryColor);
+  }
+
+  .roomextras {
+    font-size: 1.4rem;
+    width: 80vw;
+    margin: 0 auto 3rem auto;
+  }
+  .roomextras h6 {
+    color :  #8B4513	;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+  }
+  .extras {
+    font-size: 1.4rem;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+  }

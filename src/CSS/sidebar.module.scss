@@ -1,0 +1,20 @@
+
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+
+$color-secondary: #101d2c;
+
+.container {
+    display: grid;
+    grid-template-rows: 80vh ;
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+.sidebar {
+    background-color: $color-primary;
+    grid-column: sidebar-start / sidebar-end;
+    grid-row: 1 / -1;
+
+    display: flex;
+    justify-content: center;
+}

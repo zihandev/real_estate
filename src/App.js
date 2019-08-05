@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Sidebar from './Components/Sidebar';
+import Header from './Components/Header';
+import Homes from './Components/Homes';
+import Story from './Components/Story';
+import Footer from './Components/Footer';
+import RoomContainer from './Components/RoomContainer';
+import singleRoom from './Components/singleRoom';
+
+class App extends Component {
+  render() {
+    return (
+  <div>
+     {/* <Route path="/" exact component={Sidebar} />   */}
+      <Route path="/" exact component={Header} />  
+      <Route path="/" exact component={Homes} />  
+      <Route path="/" exact component={Story} />  
+      <Route path="/" exact component={Footer} />  
+      <Route path="/rooms" exact component={RoomContainer} />
+      <Route path="/rooms/:slug" component={singleRoom} />
+  </div>
+   );
+  } 
+ }
+
 
 export default App;

@@ -1,0 +1,120 @@
+
+
+.flextwo {
+    margin-top: 10px;
+    display : flex;
+
+    justify-content : space-between;
+}
+
+.ranger{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.input {
+	
+	// needs to be relative so the :focus span is positioned correctly
+	position:relative;
+	
+	// bigger font size for demo purposes
+	font-size: 1.5em;
+	
+	// the border gradient
+	background: linear-gradient(21deg, #54483A, #c69963);
+	
+	// the width of the input border
+	padding: 3px;
+	
+	// we want inline fields by default
+	display: inline-block;
+	
+	// we want rounded corners no matter the size of the field
+	// border-radius: 20px;
+	
+	// style of the actual input field
+	*:not(span) {
+		position: relative;
+		display: inherit;
+		border-radius: inherit;
+		margin: 0;
+		border: none;
+		outline: none;
+		padding: 50 25em;
+		z-index: 1; // needs to be above the :focus span
+		
+		// summon fancy shadow styles when focussed
+		&:focus + span {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
+
+
+.flexy{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//////////////////////////
+//////// RADIO
+.form {
+    &__group {
+        margin-right: 3.5rem;
+        margin-top: 2.5rem;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5rem;
+
+     }
+    
+&__radiogroup {
+    width: 49%;
+    display: inline-block;
+
+   
+}
+
+&__radioinput {
+    display: none;
+}
+
+&__radiolabel {
+    font-size: 1.4rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+}
+
+&__radiobutton {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #54483A;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -.4rem;
+
+    &::after {
+        content: "";
+        display: block;
+        height: 1.3rem;
+        width: 1.3rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #c69963;
+        opacity: 0;
+        transition: opacity .2s;
+    }
+}
+
+&__radioinput:checked ~ &__radiolabel &__radiobutton::after {
+    opacity: 1;
+}
+}
